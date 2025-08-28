@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    background-color: tomato;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header button {
+    border: none;
+    background-color: black;
+    color: white;
+    height: 46px;
+    margin-right: 20px;
+    cursor: pointer;
+
+}
+
+header h1 {
+    background-color: tomato;
+    color: white;
+    display: flex;
+    padding-left: 20px;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+    margin-top:2rem;
+}
+
+main article {
+    border: 1px solid black;
+    padding: 20px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    text-align: center;
+}
+
