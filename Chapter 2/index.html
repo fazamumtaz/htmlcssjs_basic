@@ -17,7 +17,11 @@
             <h4 id="judul1">Halo React JS</h4>
             <p>halo ini framework terbaik</p>
         </article>
-        <article>
+        <article
+        onmouseenter="articleEffect()" 
+        onmouseleave="articleEffectOff()"
+        ondblclick="removeArticle()"
+        >
             <h4 id="judul2">Halo React JS</h4>
             <p>halo ini framework terbaik</p>
         </article>
@@ -30,34 +34,29 @@
 
 
     <script>
-        // JSON
-        const films = [
-        {
-            title: "Sabtu Bersama Bapak",
-            year: "1992",
-            desc : "Film keluarga yang sangat bagus :3",
-            penulis: "upay",
-        },
-        {
-            title: "Yang Kedua",
-            year: "1999",
-            desc: "Ini film kedua",
-            penulis: "buzzlan",
-        },
-    ]
-
-        // ambil key object
-        const penulis = films[0].penulis;
-        const title = films[1].title;
-
-        console.log(title)
-        console.log(penulis)
 
         // ambil article
         const article1 = document.getElementsByTagName('article')[0];
         const article2 = document.getElementsByTagName('article')[1];
         const article3 = document.getElementsByTagName('article')[2];
         
+        function removeArticle() {
+            const isConfirm = confirm('beneran mau dihapus?');
+            if (isConfirm == true) {
+                // articleEffectOff();
+                article2.remove();
+            }
+        }
+
+        function articleEffectOff() {
+            console.log('mouse keluar..');
+            article1.style.scale = 1;
+            article2.style.scale = 1;
+            article3.style.scale = 1;
+            article2.style.color = 'black';
+            article2.style.backgroundColor = 'white';
+        }
+
         // set function buat efek nya
         function articleEffect() {
             article2.style.backgroundColor = 'tomato';
@@ -73,7 +72,7 @@
         }
 
         // karena article bukan button, jadi harus dikasih trigger addEventListener
-        article2.addEventListener('click', articleEffect);
+        // article2.addEventListener('click', articleEffect);
 
 
         function setNewElement() {
