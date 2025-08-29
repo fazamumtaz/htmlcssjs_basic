@@ -9,7 +9,7 @@
 <body>
     <header>
         <h1 id="namaLengkap">Kamseupay</h1>
-        <button onclick="setNewElement()">Ganti Data</button>
+        <button onclick="getUserData()">Ganti Data</button>
     </header>
 
     <main>
@@ -74,20 +74,13 @@
         // karena article bukan button, jadi harus dikasih trigger addEventListener
         // article2.addEventListener('click', articleEffect);
 
-
-        function setNewElement() {
-            const inputNamaLengkap = prompt('Siapa nama kamu?');
-            namaLengkap.textContent = inputNamaLengkap;
-
-            const inputJudul1 = prompt('Apa judul film pertama kamu?');
-            judul1.textContent = inputJudul1
-
-            const inputJudul2 = prompt('Apa judul film kedua kamu?');
-            judul2.textContent = inputJudul2
-
-            const inputJudul3 = prompt('Apa judul fiml ketiga kamu?');
-            judul3.textContent = inputJudul3;
-        }         
+        function getUserData() {
+            const apiURL = 'https://dummyjson.com/users/2';
+            fetch(apiURL)
+                .then((data) => data.json())
+                .then((user) => namaLengkap.textContent = user.username);
+            
+        }
 
     </script>
 </body>
